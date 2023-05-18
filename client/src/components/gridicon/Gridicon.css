@@ -1,0 +1,18 @@
+.row1 {
+    border-top: 1px solid rgba(0, 0, 0, 0.469);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.436);
+    text-align: center;
+    
+}
+
+.columns {
+    border-right: 1px solid rgba(28, 26, 26, 0.466);
+    padding-right: 15px;
+    height: 180px; /* adjust the height here */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.icon0 {
+    flex: 1;
+     border-right:black;
+} 

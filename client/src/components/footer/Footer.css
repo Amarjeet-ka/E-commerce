@@ -1,0 +1,74 @@
+.email{
+    padding:10px;
+    padding-right: 140px;
+}
+.email:focus {
+    border-color: blue;
+  }
+  
+.rowalign {
+    text-align: end;
+}
+.button{
+    padding: 10px;
+    margin-left: 20px;
+    background-color: #3e5067;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.button:hover{
+    background-color: #ffffff; /*change to desired hover color*/
+    color: black;
+}
+
+.contaier2 {
+    text-align: center;
+    
+}
+.col-with-line {
+    border-right: 1px solid #ccc;
+    padding: 20px 10px 10px 10px; /* adjust the padding values as needed */
+    padding-right: 15px;
+    height: 90px;
+    margin-top: 10px;    
+}
+  
+  .col {
+    padding: 20px 0px;
+  }
+  .links {
+    list-style-type: none;
+    font-size: 8px;
+    margin-bottom: 18px;
+  }
+  
+  .links a {
+    color: gray; /* Change the link color */
+    text-decoration: none; /* Remove the underline */
+  }
+  
+  .links a {
+    position: relative; /* Create a stacking context for the pseudo-element */
+  }
+  
+  .links a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Position the pseudo-element below the text */
+    left: 0; /* Start the gradient from the left */
+    width: 0; /* Start with a width of 0 */
+    height: 2px; /* Set the height of the underline */
+    background-image: linear-gradient(to right, transparent, #3e5067);
+    transition: width 0.3s ease-in-out; /* Add a transition effect */
+  }
+  
+  .links a:hover::before {
+    width: 70%; /* Set the width to 100% on hover */
+  }
+.iconStyle {
+    padding: 0px;
+    margin-top: 20px;
+    margin-right: 42px
+}

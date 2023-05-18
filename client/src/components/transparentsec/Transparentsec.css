@@ -1,0 +1,19 @@
+.textsec {
+    padding: 40px;
+    text-align: center;
+    opacity: 1;
+    background-color: transparent;
+}
+
+.TEXT0{
+    font-size: 120px;
+    color: #3e5067;
+}
+.TEXT1{
+    font-size: 100px;
+    color: #333333;
+}
+.TEXT2{
+    font-size: 50px;
+    color: 'gray';
+}

@@ -1,0 +1,6 @@
+.image {
+    width: 100%;
+    height: 200px; /* Set the height to your desired value */
+    object-fit: cover;
+    margin-top: 10%;
+  }
