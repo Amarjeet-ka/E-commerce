@@ -1,0 +1,58 @@
+.contaier{
+    width: 100vw; /* Set width to 100% of the viewport width */
+    height: 100vh; /* Set height to 100% of the viewport height */
+text-align: center;
+background-color: #f9f9f9;
+    flex-direction: row;
+    padding-top: 10%;
+}
+.login-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 40%;
+    padding: 20px;
+    border: 1px solid #ffff;
+    box-shadow: 5px black;
+    border-radius: 20px;
+    background-color:white;
+    justify-content: space-between;
+  }
+  
+  .login-container h2 {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type='email'],
+  input[type='password'] {
+    width: 60%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius:5px;
+  }
+  
+  button {
+    width: 150px;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 50px;
+    background-color:#ff8084;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #fd555a;
+  }
+  

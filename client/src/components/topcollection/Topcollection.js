@@ -18,7 +18,7 @@ function Topcollection() {
         industry. Lorem Ipsum has been <br/> the industry's standard dummy text ever
         since the 1500s,
       </h3>
-      <Row xs={1} md={2} lg={4} className="g-4">
+      <Row xs={1} md={2} lg={4} className="g-4" style={{justifyContent:'space-between'}} >
         <Col>
           <Image className="images" src={g1} thumbnail />
             <h4>Caonon</h4>

@@ -9,7 +9,8 @@ import "./Gridicon.css";
 
 export default function Gridicon() {
   return (
-    <Container fluid style={{ backgroundColor: "white" }}>
+   <div style={{ backgroundColor: "white" }}>
+     <Container >
       <Row className="row1" xs={1} md={2} lg={3}  >
         <Col className="columns"  >
           <FaShippingFast size={67} />
@@ -21,12 +22,13 @@ export default function Gridicon() {
           <h4>24 X 7 SERVICE</h4>
           <p>Online Service For 24 X 7</p>
         </Col>
-        <Col className="columns">
+        <Col className="columns1">
           <FaBell size={67} />
           <h4>FESTIVAL OFFER</h4>
           <p>New Online Special Festival Offer</p>
         </Col>
       </Row>
     </Container>
+   </div>
   );
 }

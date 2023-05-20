@@ -1,8 +1,7 @@
 .navbar {
     position: fixed;
     width: 100%;
-    height: 1in;
-    background-color: #3e5067;
+    background-color: white;
     color: black;
     display: flex;
     flex-direction: row;
@@ -37,7 +36,11 @@
     }
   
     .navbar-links {
-      flex-direction: column;
+      flex-direction: row;
+      align-items: space-around;
+    }
+    .navbar-link {
+      flex-direction: row;
       align-items: space-around;
     }
   
@@ -75,15 +78,6 @@
         margin-bottom: 0.5rem;
         }
       
-    
-    
-    
-    
-    
-    
-    
-    
-    
     }
         
         .navbar-link {

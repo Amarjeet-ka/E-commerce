@@ -7,6 +7,7 @@ import Transparentsec from '../components/transparentsec/Transparentsec'
 import Gridicon from '../components/gridicon/Gridicon'
 import Footer from '../components/footer/Footer'
 import Social from '../components/social/Social'
+import Recomend from '../components/recomend/Recomend'
 
 
 export default function Homepage() {
@@ -17,6 +18,7 @@ export default function Homepage() {
     <Gridimage/>
     <Topcollection/>
     <Transparentsec/>
+    <Recomend/>
     <Gridicon/>
     <Social/>
     <Footer/>

@@ -12,6 +12,12 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.columns1 {
+    padding-right: 15px;
+    height: 180px; /* adjust the height here */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 .icon0 {
     flex: 1;
      border-right:black;
