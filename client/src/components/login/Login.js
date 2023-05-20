@@ -17,20 +17,20 @@ const Login = () => {
     setPassword(e.target.value);
   };
 
-  const handleLogin = () => {
-    console.log("Email:", email);
-    console.log("Password:", password);
+  // const handleLogin = () => {
+  //   console.log("Email:", email);
+  //   console.log("Password:", password);
 
-    if(email==='amar@123' && password==='123')
-    {
-         console.log("Login Sucessfull");
-        window.location.href('/home');
-    }
-    else
-    {
-        console.log('acess denied');
-    }
-  };
+  //   if(email==='amar@123' && password==='123')
+  //   {
+  //        console.log("Login Sucessfull");
+  //       window.location.href('/home');
+  //   }
+  //   else
+  //   {
+  //       console.log('acess denied');
+  //   }
+  // };
 
   return (
     <Container fluid className="contaier">

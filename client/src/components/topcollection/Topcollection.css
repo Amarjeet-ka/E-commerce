@@ -3,7 +3,12 @@
     height: 250px; /* Set the height to your desired value */
     object-fit: cover;
     margin-top: 10%;
+    transition: transform 0.999s ease;
   }
+  .images:hover {
+    transform: scale(1.04);
+  }
+  
   .text0 {
     font-size: 22px;
     text-align: center;
