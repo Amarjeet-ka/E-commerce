@@ -12,14 +12,14 @@ export default function Header() {
   };
 
   return (
-    <div style={{ marginTop: '1in' }}>
+    <div style={{ position: 'relative', zIndex: 0 }}>
       <Carousel activeIndex={index} onSelect={handleSelect}>
-        <Carousel.Item style={{ height: '500px', zIndex: 0 }}>
+        <Carousel.Item style={{ height: '500px' }}>
           <img
             className="d-block w-100"
             src={h1}
             alt="First slide"
-            style={{ objectFit: 'cover', height: '100%' }}
+            style={{ objectFit: 'cover', height: '600px' }}
           />
           <Carousel.Caption>
             <h2>First slide label</h2>
@@ -32,7 +32,7 @@ export default function Header() {
             className="d-block w-100 h-40"
             src={h2}
             alt="Second slide"
-            style={{ objectFit: 'cover', height: '100%' }}
+            style={{ objectFit: 'cover', height: '600px' }}
           />
 
           <Carousel.Caption>
@@ -46,7 +46,7 @@ export default function Header() {
             className="d-block w-100"
             src={h3}
             alt="Third slide"
-            style={{ objectFit: 'cover', height: '100%' }}
+            style={{ objectFit: 'cover', height: '600px' }}
           />
 
           <Carousel.Caption>

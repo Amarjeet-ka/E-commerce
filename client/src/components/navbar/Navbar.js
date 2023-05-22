@@ -1,109 +1,100 @@
-import React, { useState } from 'react';
-import './Navbar.css'; 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import m from '../assets/multikart.png';
+import React, { useState } from "react";
+import "./Navbar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import m from "../assets/multikart.png";
+import CloseButton from "react-bootstrap/CloseButton";
 
+function NavigationBar() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-function  NavigationBar() {
-  const [showMore, setShowMore] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
-
-  function handleLinkHover() {
-    setShowMore(true);
-  }
-
-  function handleLinkLeave() {
-    setShowMore(false);
-  }
-
-  function handleMenuClick() {
-    setShowMenu(!showMenu);
-  }
-
-  const navLinks = [
-    {
-      label: 'Home',
-      path: '/',
-      options: [
-        { label: 'Submenu Item 1', path: '/submenu1' },
-        { label: 'Submenu Item 2', path: '/submenu2' },
-        { label: 'Submenu Item 3', path: '/submenu3' },
-      ],
-    },
-    {
-      label: 'About',
-      path: '/about',
-      options: [
-        { label: 'Submenu Item 1', path: '/submenu1' },
-        { label: 'Submenu Item 2', path: '/submenu2' },
-        { label: 'Submenu Item 3', path: '/submenu3' },
-      ],
-    },
-    {
-      label: 'Contact',
-      path: '/contact',
-      options: [
-        { label: 'Submenu Item 1', path: '/submenu1' },
-        { label: 'Submenu Item 2', path: '/submenu2' },
-        { label: 'Submenu Item 3', path: '/submenu3' },
-      ],
-    },
-  ];
+  const handlePopupToggle = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
+  
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+  };
 
   return (
-    <nav className="navbar">
-      
-      <div className="navbar-top">
-        
-     
- 
-      <FontAwesomeIcon className="navbar-logo" icon={faBars}   onClick={handleMenuClick} />
-
-        <div className="navbar-logo">
-          <img src={m}  alt='pic not found'/>
-        </div>
-      </div>
-      {showMenu && (
-
-
-
-
-
-      <ul className={`navbar-links ${showMenu ? 'show' : ''}`}>
-        {navLinks.map((link) => (
-          <li className="navbar-link" key={link.path}>
-            <a href={link.path}>{link.label}</a>
-            {link.options && (
-              <ul className="navbar-more">
-                {link.options.map((option) => (
-                  <li className="navbar-more-link" key={option.path}>
-                    <a href={option.path}>{option.label}</a>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))}
-      </ul>
-
-      )}
-      <div className="navbar-links">
-        <a href="/service" className="navbar-link" onMouseEnter={handleLinkHover} onMouseLeave={handleLinkLeave}>Service</a>
-        {showMore && (
-          <div className="navbar-more">
-            <a href="/m1" className="navbar-more-link">More 1</a>
-            <a href="/m2" className="navbar-more-link">More 2</a>
-            <a href="/m3" className="navbar-more-link">More 3</a>
+    <>
+      <nav className="navbar">
+        <div className="navbar-top">
+          <div className="App">
+            <FontAwesomeIcon
+              className="navbar-logo"
+              onClick={handlePopupToggle}
+              icon={faBars}
+            />
+            {isPopupOpen && <PopupScreen handleClosePopup={handleClosePopup} />}
           </div>
-        )}
-        <a href="/l1" className="navbar-link">Product</a>
-        <a href="/l2" className="navbar-link">Link 3</a>
-      </div>
-    </nav>
+          <div className="navbar-logo">
+            <img src={m} alt="pic not found" />
+          </div>
+        </div>
+        {/* Rest of the code */}
+        <div class="navbar-links">
+  <a href="#home" class="navbar-link">Home</a>
+  <a href="#about" class="navbar-link">About</a>
+  <a href="#services" class="navbar-link">Services</a>
+  <a href="#contact" class="navbar-link">Contact</a>
+</div>
+
+      </nav>
+    </>
   );
 }
 
-export default 
+export default NavigationBar;
 
-  NavigationBar;
+const PopupScreen = ({ handleClosePopup }) => {
+  const handleLinkHover = (event) => {
+    const hoverLink = event.target.nextElementSibling;
+    hoverLink.style.display = "inline-block";
+  };
+
+  const handleLinkLeave = (event) => {
+    const hoverLink = event.target.nextElementSibling;
+    hoverLink.style.display = "none";
+  };
+
+  return (
+    <div className="popup-screen">
+      <h2>Navigation <CloseButton onClick={handleClosePopup} /></h2>
+      <ul className="popup-links">
+        <li>
+          <a href="/home" onMouseEnter={handleLinkHover} onMouseLeave={handleLinkLeave}>
+            Home
+          </a>
+          <a href="/home" className="hover-link">
+            Additional Link
+          </a>
+        </li>
+        <li>
+          <a href="/about" onMouseEnter={handleLinkHover} onMouseLeave={handleLinkLeave}>
+            About
+          </a>
+          <a href="/about" className="hover-link">
+            Additional Link
+          </a>
+        </li>
+        <li>
+          <a href="/services" onMouseEnter={handleLinkHover} onMouseLeave={handleLinkLeave}>
+            Services
+          </a>
+          <a href="/services" className="hover-link">
+            Additional Link
+          </a>
+        </li>
+        <li>
+          <a href="/contact" onMouseEnter={handleLinkHover} onMouseLeave={handleLinkLeave}>
+            Contact
+          </a>
+          <a href="/contact" className="hover-link">
+            Additional Link
+          </a>
+        </li>
+      </ul>
+    </div>
+  );
+};
