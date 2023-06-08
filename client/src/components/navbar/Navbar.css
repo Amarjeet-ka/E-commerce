@@ -219,3 +219,32 @@
       color: #f00;
     }
     
+    .navbar-links {
+      position: relative; /* Set the parent as a positioning context */
+      display: flex;
+    }
+    
+    .navbar-link {
+      margin-right: 10px;
+      text-decoration: none;
+      color: #000;
+    }
+    
+    .additional-links {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%; /* Position below the main links */
+      left: 0;
+      background-color: #f9f9f9;
+      padding: 10px;
+      border: 1px solid #ccc;
+      z-index: 1; /* Set z-index to appear above other elements */
+    }
+    
+    .additional-links a {
+      margin-bottom: 5px;
+      color: #000;
+      text-decoration: none;
+    }
+    

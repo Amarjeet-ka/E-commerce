@@ -15,7 +15,11 @@ function NavigationBar() {
   const handleClosePopup = () => {
     setIsPopupOpen(false);
   };
+  const [isHovered, setIsHovered] = useState(false);
 
+  const handleHover = () => {
+    setIsHovered(!isHovered);
+  };
   return (
     <>
       <nav className="navbar">
@@ -33,13 +37,28 @@ function NavigationBar() {
           </div>
         </div>
         {/* Rest of the code */}
-        <div class="navbar-links">
-  <a href="#home" class="navbar-link">Home</a>
-  <a href="#about" class="navbar-link">About</a>
-  <a href="#services" class="navbar-link">Services</a>
-  <a href="#contact" class="navbar-link">Contact</a>
-</div>
-
+        <div className="navbar-links">
+      <a href="#home" className="navbar-link" onMouseEnter={handleHover} onMouseLeave={handleHover}>
+        Home
+      </a>
+      <a href="#about" className="navbar-link" >
+        About
+      </a>
+      <a href="#services" className="navbar-link" >
+        Services
+      </a>
+      <a href="#contact" className="navbar-link" >
+        Contact
+      </a>
+      {isHovered && (
+        <div className="additional-links">
+          {/* Add your additional links here */}
+          <a href="#link1">Product</a>
+          <a href="#link2">Services</a>
+          <a href="#link3">Associates</a>
+        </div>
+      )}
+    </div>
       </nav>
     </>
   );
