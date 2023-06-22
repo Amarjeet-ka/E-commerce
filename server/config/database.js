@@ -1,7 +1,8 @@
-const express = require('express');
+// const express = require('express');
 const mongoose = require('mongoose');
-const mongoURI = "mongodb+srv://registration:registration@cluster0.sd2bhdx.mongodb.net/?retryWrites=true&w=majority";
- 
+require('dotenv').config();
+
+const mongoURI = process.env.REACT_APP_MONGO_URI;
 
 const connectdatabase =() => {
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
