@@ -1,74 +1,28 @@
-import React, { useState } from "react";
-import "./Login.css";
-import Container from "react-bootstrap/Container";
-import { Button } from "react-bootstrap";
-import { FaGoogle, FaFacebook } from "react-icons/fa";
+import React from 'react';
+import { GoogleLogin } from 'react-google-login';
 
 const Login = () => {
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+  const responseGoogle = (response) => {
+    console.log(response);
+    // Handle the response here
   };
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
+  const onFailure = (error) => {
+    console.log(error);
+    // Handle the failure here
   };
-
-  // const handleLogin = () => {
-  //   console.log("Email:", email);
-  //   console.log("Password:", password);
-
-  //   if(email==='amar@123' && password==='123')
-  //   {
-  //        console.log("Login Sucessfull");
-  //       window.location.href('/home');
-  //   }
-  //   else
-  //   {
-  //       console.log('acess denied');
-  //   }
-  // };
 
   return (
-    <Container fluid className="contaier">
-      <div className="login-container">
-        <h2>Login Register</h2>
-        <form>
-          <div className="form-group">
-            <input
-              placeholder="Enter your email/username"
-              type="email"
-              value={email}
-              onChange={handleEmailChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="password"
-              placeholder="password"
-              value={password}
-              onChange={handlePasswordChange}
-              required
-            />
-            <h6>
-              <input type="checkbox" /> Remind me
-            </h6>
-            <h6>Forgot Password</h6>
-          </div>
-
-          <Button href="/home" type="button">
-            Login
-          </Button>
-        </form>
-        <h6>Login with social platform</h6>
-        <FaGoogle size={32} />
-        <FaFacebook size={32} />
-      </div>
-    </Container>
+    <div>
+      <GoogleLogin
+        clientId="68511147403-ipemso6cdv0qaqo3iu2943rs8kchcrr1.apps.googleusercontent.com"
+        buttonText="Login with Google"
+        onSuccess={responseGoogle}
+        onFailure={onFailure}
+        cookiePolicy={'single_host_origin'}
+        uxMode="redirect"
+      />
+    </div>
   );
 };
 
