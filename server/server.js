@@ -1,14 +1,14 @@
 const express = require('express');
 const app = express();
-        
+const ejs = require("ejs");
 const bodyParser = require("body-parser");
 const connectdatabase = require('./config/database.js');
 const apiRouter = require('./routes/gridimage.js');
 const apiRouter2 = require('./routes/top_collection.js');
 
-
+// Calling database connection
 connectdatabase;
-
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -21,6 +21,7 @@ app.get("/", function(req, res) {
 
 app.use('/api', apiRouter);
 app.use('/api', apiRouter2);
+app.use('/api3/', messageRoutes);
 
 const port = process.env.PORT || 5000;
 

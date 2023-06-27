@@ -21,7 +21,7 @@ export default function Header() {
             alt="First slide"
             style={{ objectFit: 'cover', height: '600px' }}
           />
-          <Carousel.Caption>
+          <Carousel.Caption style={{color:'green'}}>
             <h2>First slide label</h2>
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
           </Carousel.Caption>
@@ -35,7 +35,7 @@ export default function Header() {
             style={{ objectFit: 'cover', height: '600px' }}
           />
 
-          <Carousel.Caption>
+          <Carousel.Caption style={{color:'orange'}}>
             <h2>Second slide label</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </Carousel.Caption>

@@ -4,6 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import m from "../assets/multikart.png";
 import CloseButton from "react-bootstrap/CloseButton";
+import { useAuth0 } from "@auth0/auth0-react";
+import { Button } from "react-bootstrap";
+
 
 function NavigationBar() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -20,6 +23,12 @@ function NavigationBar() {
   const handleHover = () => {
     setIsHovered(!isHovered);
   };
+ 
+
+  const { loginWithRedirect, isAuthenticated, logout, user } = useAuth0();
+
+
+
   return (
     <>
       <nav className="navbar">
@@ -37,18 +46,41 @@ function NavigationBar() {
           </div>
         </div>
         {/* Rest of the code */}
+
         <div className="navbar-links">
-      <a href="#home" className="navbar-link" onMouseEnter={handleHover} onMouseLeave={handleHover}>
+
+      
+          {isAuthenticated && (
+            <li>
+              <p> {user.name} </p>
+            </li>
+          )}
+
+
+
+      <a href="/home" className="navbar-link" onMouseEnter={handleHover} onMouseLeave={handleHover}>
         Home
       </a>
+    
+          {isAuthenticated ? (
+            <li>
+              <Button
+                onClick={() => logout({ returnTo: window.location.origin })}>
+                Log Out
+              </Button>
+            </li>
+          ) : (
+            <li>
+              <Button onClick={() => loginWithRedirect()}>Log In</Button>
+            </li>
+          )}
+
       <a href="#about" className="navbar-link" >
         About
       </a>
-      <a href="#services" className="navbar-link" >
-        Services
-      </a>
-      <a href="#contact" className="navbar-link" >
-        Contact
+  
+      <a href="/complaints" className="navbar-link" >
+        Complaint
       </a>
       {isHovered && (
         <div className="additional-links">
