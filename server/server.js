@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
 const ejs = require("ejs");
+const cors = require('cors');
 const bodyParser = require("body-parser");
 const connectdatabase = require('./config/database.js');
 const apiRouter = require('./routes/gridimage.js');
 const apiRouter2 = require('./routes/top_collection.js');
-
+const messageRoutes = require('./routes/messageRoutes.js')
 // Calling database connection
 connectdatabase;
 app.use(cors());
