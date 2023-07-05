@@ -7,6 +7,8 @@ const connectdatabase = require('./config/database.js');
 const apiRouter = require('./routes/gridimage.js');
 const apiRouter2 = require('./routes/top_collection.js');
 const messageRoutes = require('./routes/messageRoutes.js')
+const userRegisterRoutes = require('./routes/userRegisterRoutes.js');
+const userLoginRoutes = require('./routes/userLoginRoutes.js');
 // Calling database connection
 connectdatabase;
 app.use(cors());
@@ -23,7 +25,8 @@ app.get("/", function(req, res) {
 app.use('/api', apiRouter);
 app.use('/api', apiRouter2);
 app.use('/api3/', messageRoutes);
-
+app.use('/api4',userRegisterRoutes);
+app.use('/api5',userLoginRoutes);
 const port = process.env.PORT || 5000;
 
 app.listen(port, function() {
