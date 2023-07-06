@@ -5,14 +5,24 @@ const Message = require('../models/messageModel');
 const router = express.Router();
 
 // Create a new message
-router.post('/messages', async (req, res) => {
+router.post('/postmessages', async (req, res) => {
   try {
-    const { text } = req.body;
-    const newMessage = new Message({ text });
+    const { purchaseId, text } = req.body;
+    const newMessage = new Message({ text, purchaseId });
     await newMessage.save();
     res.status(201).json({ message: 'Message created successfully' });
   } catch (error) {
     res.status(500).json({ error: 'Failed to create message' });
+  }
+});
+
+// Get all messages
+router.get('/getmessages', async (req, res) => {
+  try {
+    const messages = await Message.find();
+    res.status(200).json(messages);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to retrieve messages' });
   }
 });
 

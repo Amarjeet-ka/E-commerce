@@ -22,3 +22,7 @@
     font-size: 14px;
     text-align: center;
   }
+  .product-image {
+    height: 300px; /* Adjust the desired height */
+  }
+  
