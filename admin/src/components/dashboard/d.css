@@ -1,0 +1,71 @@
+.dashboard-container {
+    text-align: center;
+  }
+  
+  .dashboard-heading {
+    color: #333;
+    font-size: 200;
+  }
+  
+  .purchase-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .purchase-item {
+    margin: 10px 0;
+  }
+  
+  .purchase-id {
+    font-weight: bold;
+    color: blue;
+  }
+  
+  .message-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+  }
+  
+  .message-item {
+    margin-top: 5px;
+  }
+  
+  .complaint-label {
+    font-weight: bold;
+    color: green;
+  }
+  .message-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message-item {
+    margin-top: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .purchase-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .purchase-table th,
+  .purchase-table td {
+    border: 2px solid green;
+    padding: 8px;
+  }
+  
+  .purchase-table th {
+    text-align: left;
+    background-color: #f2f2f2;
+  }
+  
+  .purchase-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  

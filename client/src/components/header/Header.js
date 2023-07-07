@@ -22,7 +22,7 @@ export default function Header() {
             style={{ objectFit: 'cover', height: '600px' }}
           />
           <Carousel.Caption style={{color:'green'}}>
-            <h2>First slide label</h2>
+          <h2>Wide Range of Elentrinics Items</h2>
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -36,7 +36,7 @@ export default function Header() {
           />
 
           <Carousel.Caption style={{color:'orange'}}>
-            <h2>Second slide label</h2>
+          <h2>Wide Range of Elentrinics Items</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -50,7 +50,7 @@ export default function Header() {
           />
 
           <Carousel.Caption>
-            <h2>Third slide label</h2>
+          <h2>Wide Range of Elentrinics Items</h2>
             <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
           </Carousel.Caption>
         </Carousel.Item>
